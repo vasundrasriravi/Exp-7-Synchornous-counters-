@@ -1,3 +1,5 @@
+### NAME : VASUNDRA SRI
+### REG NO: 212222230168
 # Exp-6-Synchornous-counters - up counter and down counter 
 ### AIM: To implement 4 bit up and down counters and validate  functionality.
 ### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
@@ -71,13 +73,20 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
    - Once Waveform is created Right Click on the Input/Output Panel > " Insert Node or Bus" > Click on Node Finder > Click On "List" > Select All.
    - Give the Input Combinations according to the Truth Table amd then simulate the Output Waveform.
 ### PROGRAM 
-```
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: VASUNDRA SRI R
-RegisterNumber: 212222230168 
-```
 ### Up counter:
-
+```
+module exp6(A,clk);
+output reg [3:0]A;
+input clk;
+always@(posedge clk)
+begin
+A[0]=((((A[1])&(A[2]))&A[3])^A[0]);
+A[1]=(((A[2])&(A[3]))^A[1]);
+A[2]=((A[3])^A[2]);
+A[3]=1^A[3];
+end
+endmodule
+```
 ### Down counter:
 ```
 module Downcounter(A,clk);
@@ -94,21 +103,24 @@ endmodule
 ```
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
 ### Up counter:
-
+![Screenshot 2023-10-20 095028](https://github.com/vasundrasriravi/Exp-7-Synchornous-counters-/assets/119393983/31552c48-35cd-426b-bfb3-4b1de3ca691a)
 
 ### Down counter:
 ![Screenshot 2023-10-20 093143](https://github.com/vasundrasriravi/Exp-7-Synchornous-counters-/assets/119393983/1c876358-2b8e-41d3-8c5b-7f243683372b)
 
 ### TIMING DIGRAMS FOR COUNTER  
 ### Up counter:
-
+![Screenshot 2023-10-20 095133](https://github.com/vasundrasriravi/Exp-7-Synchornous-counters-/assets/119393983/31cd46ea-5a4a-4e64-b131-85be566656ac)
 
 ### Down counter:
 ![Screenshot 2023-10-20 093423](https://github.com/vasundrasriravi/Exp-7-Synchornous-counters-/assets/119393983/8e7223d0-44ae-4901-aa84-01ee909ac886)
 
-
 ### TRUTH TABLE 
+### Up counter:
+![upstate](https://github.com/vasundrasriravi/Exp-7-Synchornous-counters-/assets/119393983/f92fa6ac-f4b6-4bc2-9643-0b69186dbe4e)
 
+### Down counter:
+![downstate](https://github.com/vasundrasriravi/Exp-7-Synchornous-counters-/assets/119393983/dd90589d-4d11-4f03-91d5-e8bac081292b)
 
 ### RESULTS 
-Thus, The Synchornous counters of up counter and down counter circuit are studied and the truth table for different logic gates are Successfully verified.
+To implement 4 bit up and down counters and validate functionality is executed successfully.
